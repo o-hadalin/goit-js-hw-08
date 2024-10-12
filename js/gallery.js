@@ -79,26 +79,7 @@ const galleryMarkup = images
     </a>
     </li>`)
     .join("");
-
 galleryField.innerHTML = galleryMarkup;
-
-// galleryField.addEventListener("click", event => {
-//   event.preventDefault();
-//     if (event.target.nodeName !== "IMG")
-//         return;
-// });
-
-const gallery = document.querySelector(".gallery");
-
-// gallery.addEventListener("click", event => {
-//   event.preventDefault();
-  
-//     if (event.target.nodeName !== "IMG")
-//         return;
-
-//   const largeImageLink = event.target.dataset.source;
-//   console.log(largeImageLink);
-// });
 
 galleryField.addEventListener("click", event => {
   event.preventDefault();
