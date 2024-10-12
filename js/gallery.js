@@ -82,20 +82,32 @@ const galleryMarkup = images
 
 galleryField.innerHTML = galleryMarkup;
 
-galleryField.addEventListener("click", event => {
-  event.preventDefault();
-    if (event.target.nodeName !== "IMG")
-        return;
-});
+// galleryField.addEventListener("click", event => {
+//   event.preventDefault();
+//     if (event.target.nodeName !== "IMG")
+//         return;
+// });
 
 const gallery = document.querySelector(".gallery");
 
-gallery.addEventListener("click", event => {
-  event.preventDefault();
+// gallery.addEventListener("click", event => {
+//   event.preventDefault();
   
-    if (event.target.nodeName !== 'IMG')
-        return;
+//     if (event.target.nodeName !== "IMG")
+//         return;
+
+//   const largeImageLink = event.target.dataset.source;
+//   console.log(largeImageLink);
+// });
+
+galleryField.addEventListener("click", event => {
+  event.preventDefault();
+
+  if (event.target.nodeName !== "IMG") return;
 
   const largeImageLink = event.target.dataset.source;
-  console.log(largeImageLink);
+
+  basicLightbox.create(`
+    <img src="${largeImageLink}" width="1112" height="640">
+  `).show();
 });
